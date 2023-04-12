@@ -1,5 +1,6 @@
 package br.com.ada.projeto.Modulo2.v2.factory;
 
+import br.com.ada.projeto.Modulo2.v2.enums.TipoCliente;
 import br.com.ada.projeto.Modulo2.v2.services.cadastroCliente.CadastroPessoaFisica;
 import br.com.ada.projeto.Modulo2.v2.services.cadastroCliente.CadastroPessoa;
 import br.com.ada.projeto.Modulo2.v2.services.cadastroCliente.CadastroPessoaJuridica;
@@ -10,12 +11,12 @@ public class CadastroPessoaFactory {
 
         CadastroPessoa cadastroPessoa;
 
-        if (tpCliente.equals(1)) {
+        if (tpCliente.equals(TipoCliente.PESSOA_FISICA.getTpCliente())) {
 
             cadastroPessoa = new CadastroPessoaFisica();
 
 
-        } else if (tpCliente.equals(2)) {
+        } else if (tpCliente.equals(TipoCliente.PESSOA_JURIDICA.getTpCliente())) {
 
             cadastroPessoa = new CadastroPessoaJuridica();
 
